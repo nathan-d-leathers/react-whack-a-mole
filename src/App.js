@@ -33,13 +33,16 @@ function App() {
 
   // renders
   const denElements = dens.map((den, index) => {
-    return (
-      <Mole key={`mole-${index}`} />
-    )
-  })
+      // console.log(den.isMoleVisible)
+        return (
+          <Mole den={den.isMoleVisible} isWhacked={onMoleWhacked} key={`mole-${index}`} />
+        )
+      
+    })
 
   return (
     <div className="App">
+  
       <h1>WHACK-A-MOLE!</h1>
       <h2>Points: { points }</h2>
       <div className="dens">
